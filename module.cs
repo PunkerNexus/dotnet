@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+
+
 using System.Linq;
 // he he he he
 // he he he he
@@ -11,18 +13,18 @@ namespace module
 {
     class Program
     {
-        //Сделать телефонную книгу с интерфейсом
-        //добавить новую запись(телефоны не могут содержать буквы и быть меньше 8 символов, имена не могут содержать цифры и быть меньше 4 символов)
-        //отобразить все записи
-        //выйти
+        //Г‘Г¤ГҐГ«Г ГІГј ГІГҐГ«ГҐГґГ®Г­Г­ГіГѕ ГЄГ­ГЁГЈГі Г± ГЁГ­ГІГҐГ°ГґГҐГ©Г±Г®Г¬
+        //Г¤Г®ГЎГ ГўГЁГІГј Г­Г®ГўГіГѕ Г§Г ГЇГЁГ±Гј(ГІГҐГ«ГҐГґГ®Г­Г» Г­ГҐ Г¬Г®ГЈГіГІ Г±Г®Г¤ГҐГ°Г¦Г ГІГј ГЎГіГЄГўГ» ГЁ ГЎГ»ГІГј Г¬ГҐГ­ГјГёГҐ 8 Г±ГЁГ¬ГўГ®Г«Г®Гў, ГЁГ¬ГҐГ­Г  Г­ГҐ Г¬Г®ГЈГіГІ Г±Г®Г¤ГҐГ°Г¦Г ГІГј Г¶ГЁГґГ°Г» ГЁ ГЎГ»ГІГј Г¬ГҐГ­ГјГёГҐ 4 Г±ГЁГ¬ГўГ®Г«Г®Гў)
+        //Г®ГІГ®ГЎГ°Г Г§ГЁГІГј ГўГ±ГҐ Г§Г ГЇГЁГ±ГЁ
+        //ГўГ»Г©ГІГЁ
         static string[,] phoneList = new string[10, 10];
 
         static void Main()
         {
             while (true)
             {
-                Console.WriteLine("1.Создать контакт.\n2.Вывести все контакты.\n3.Удалить контакт.\n4.Выход.");
-                Console.Write("Ведите команду: ");
+                Console.WriteLine("1.Г‘Г®Г§Г¤Г ГІГј ГЄГ®Г­ГІГ ГЄГІ.\n2.Г‚Г»ГўГҐГ±ГІГЁ ГўГ±ГҐ ГЄГ®Г­ГІГ ГЄГІГ».\n3.Г“Г¤Г Г«ГЁГІГј ГЄГ®Г­ГІГ ГЄГІ.\n4.Г‚Г»ГµГ®Г¤.");
+                Console.Write("Г‚ГҐГ¤ГЁГІГҐ ГЄГ®Г¬Г Г­Г¤Гі: ");
 
                 string press = Console.ReadLine();
 
@@ -40,7 +42,7 @@ namespace module
                     case "4":
                         return;
                     default:
-                        Console.WriteLine("Не верная команда. Попробуйте еще раз.\n");
+                        Console.WriteLine("ГЌГҐ ГўГҐГ°Г­Г Гї ГЄГ®Г¬Г Г­Г¤Г . ГЏГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГҐГ№ГҐ Г°Г Г§.\n");
                         Console.WriteLine();
                         break;
                 }
@@ -55,12 +57,12 @@ namespace module
                 string withoutletters = "[a-zA-Z]";
                 while (true)
                 {
-                    Console.Write("Введите имя: ");
+                    Console.Write("Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї: ");
                     name = Console.ReadLine();
 
                     if (name.Length < 4 || Regex.IsMatch(name, withoutnumb))
                     {
-                        Console.WriteLine("Имя должны быть не менее 4х символов и не должно содержать цифры.");
+                        Console.WriteLine("Г€Г¬Гї Г¤Г®Г«Г¦Г­Г» ГЎГ»ГІГј Г­ГҐ Г¬ГҐГ­ГҐГҐ 4Гµ Г±ГЁГ¬ГўГ®Г«Г®Гў ГЁ Г­ГҐ Г¤Г®Г«Г¦Г­Г® Г±Г®Г¤ГҐГ°Г¦Г ГІГј Г¶ГЁГґГ°Г».");
                     }
                     else
                     {
@@ -70,13 +72,13 @@ namespace module
 
                 while (true)
                 {
-                    Console.Write("Введите номер: ");
+                    Console.Write("Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®Г¬ГҐГ°: ");
                     number = Console.ReadLine();
 
                     if (number.Length < 8 || Regex.IsMatch(number, withoutletters))
 
                     {
-                        Console.WriteLine("Номер должен быть не менее 8и символов и не должен содержать буквы.");
+                        Console.WriteLine("ГЌГ®Г¬ГҐГ° Г¤Г®Г«Г¦ГҐГ­ ГЎГ»ГІГј Г­ГҐ Г¬ГҐГ­ГҐГҐ 8ГЁ Г±ГЁГ¬ГўГ®Г«Г®Гў ГЁ Г­ГҐ Г¤Г®Г«Г¦ГҐГ­ Г±Г®Г¤ГҐГ°Г¦Г ГІГј ГЎГіГЄГўГ».");
                     }
                     else
                     {
@@ -89,7 +91,7 @@ namespace module
                         if (phoneList[i, j] == null)
                         {
                             phoneList[i, j] = string.Format("{0} {1}", name, number);
-                            Console.WriteLine("Контакт добавлен.");
+                            Console.WriteLine("ГЉГ®Г­ГІГ ГЄГІ Г¤Г®ГЎГ ГўГ«ГҐГ­.");
                             Console.WriteLine();
                             return;
                         }
@@ -104,7 +106,7 @@ namespace module
         {
             int a = 1;
             Console.WriteLine();
-            Console.WriteLine("Ваша телефонная книга: ");
+            Console.WriteLine("Г‚Г ГёГ  ГІГҐГ«ГҐГґГ®Г­Г­Г Гї ГЄГ­ГЁГЈГ : ");
             for (int i = 0; i < 10; i++)
                 for (int j = 0; j < 10; j++)
                     if (phoneList[i, j] != null)
@@ -114,7 +116,7 @@ namespace module
 
         static void DeleteCont()
         {
-            Console.WriteLine("Список");
+            Console.WriteLine("Г‘ГЇГЁГ±Г®ГЄ");
 
             for (int i = 0; i < 10; i++)
                 for (int j = 0; j < 10; j++)
@@ -141,7 +143,7 @@ namespace module
 
             try
             {
-                Console.Write("Ведите номер удаляемого контакта: ");
+                Console.Write("Г‚ГҐГ¤ГЁГІГҐ Г­Г®Г¬ГҐГ° ГіГ¤Г Г«ГїГҐГ¬Г®ГЈГ® ГЄГ®Г­ГІГ ГЄГІГ : ");
                 int index = Convert.ToInt32(Console.ReadLine()) - 1;
                 int index1 = index / 4;
                 int index2 = index;
@@ -152,7 +154,7 @@ namespace module
                 }
 
                 phoneList[index1, index2] = null;
-                Console.WriteLine("Удалено!");
+                Console.WriteLine("Г“Г¤Г Г«ГҐГ­Г®!");
 
                 Console.WriteLine();
             }
